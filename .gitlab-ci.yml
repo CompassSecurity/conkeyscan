@@ -1,0 +1,62 @@
+image: python:latest
+
+stages:
+  - lint
+  - build
+  - release
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+
+before_script:
+  - python --version ; pip --version
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+
+linting:
+  stage: lint
+  before_script:
+    - pip install black
+  script:
+    - black --check .
+
+# https://martin-renze.de/posts/gitlab-ci-releases/
+build:
+  stage: build    
+  script:
+    - echo BUILD_JOB_ID=$CI_JOB_ID >> CI_JOB_ID.env
+    - pip install pyinstaller
+    - pyinstaller conkeyscan.py --onefile
+  artifacts:
+    paths:
+    - "dist/conkeyscan"
+    reports:
+      # export the environment statement so we can access it in the release stage
+      dotenv: CI_JOB_ID.env
+
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  needs:
+    - job: build
+      artifacts: true
+  before_script:
+    -  echo "release application..."
+  script:
+    - echo "Application successfully released."
+  release:
+    name: 'Release Executables $CI_COMMIT_SHORT_SHA'
+    description: 'Created using the release-cli'
+    tag_name: 'conkeyscan-$CI_COMMIT_SHORT_SHA'
+    assets:
+      links:
+        - name: 'Linux self-contained Executable'
+          url: '${CI_PROJECT_URL}/-/jobs/${BUILD_JOB_ID}/artifacts/file/dist/conkeyscan'
+  only:
+    - main

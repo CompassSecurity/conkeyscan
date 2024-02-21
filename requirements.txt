@@ -1,0 +1,8 @@
+loguru==0.7.2
+atlassian-python-api==3.41.3
+beautifulsoup4==4.12.2
+requests-ratelimiter==0.4.2
+clize==5.0.2
+random-user-agent==1.0.1
+readchar==0.7
+PySocks==1.7.1
