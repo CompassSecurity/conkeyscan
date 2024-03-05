@@ -1,47 +1,39 @@
 # Conkeyscan
+[![PyPI version](https://badge.fury.io/py/conkeyscan.svg)](https://badge.fury.io/py/conkeyscan)
 
-Scan Confluence Wikis for keywords.
+> A Pentesters Confluence Keyword Scanner
 
-The approach is using the search functionality and CQL queries to search for keywords in Confluence.
+Using the Confluence API search functionality and CQL queries to search for keywords.
 
-# PyPI
+# Installation
 
-`pip install conkeyscan`
-
-# Run It
-
-1. Download the latest release [here](https://github.com/CompassSecurity/conkeyscan/releases).
-
-2. Create a dictionary with search terms per line or copy the default `dict.txt` from this repository.
-
-3. and then run it 
+1. Install from PyPI `pip install conkeyscan`
+2. Create a custom dictionary with search terms per line (recommended but optional).
+3. And then run it 
 ```bash
-./conkeyscan -url 'https://example.atlassian.net'  --username 'ex@amp.le' --password 'ATAT...' -p 'socks5://127.0.0.1:1337' -d ./dict.txt 
+conkeyscan -url 'https://example.atlassian.net'  --username 'ex@amp.le' --password 'ATAT...' -p 'socks5://127.0.0.1:1337' -d ./dict.txt 
 ```
+4. Ask for further help `conkeyscan -h`
 
 # Get Up And Running Manually
 
 1. Install dependencies `pip install -r requirements.txt`
 
-2. Update the `dict.txt` file, containing keywords you want to search for. One per line.
+2. Update the `src/conkeyscan/config/dict.txt` file, containing keywords you want to search for. One per line.
 
 3. run it `python3 -m conkeyscan.conkeyscan --url http://192.168.1.2:8090/ --username someUsr --password somePassOrAPIkey`
-
-4. Profit 🍾 check the generated logfile or stdout
-
-5. Further Help `python3 -m conkeyscan.conkeyscan -h`
-
 
 # Authentication
 
 > It is possible to use a password or an API key.
 
-To create an API key in the cloud go to: https://id.atlassian.com/manage-profile/security/api-tokens
+To create an API key in the cloud go to: https://id.atlassian.com/manage-profile/security/api-tokens.
+
 If testing against OnPrem instance you can create an API key in the user settings.
 
 # Dictionary
 
-The default `dict.txt` file was taken from from [Conf-Thief](https://raw.githubusercontent.com/antman1p/Conf-Thief/master/dictionaries/secrets-keywords.txt)
+The default `dict.txt` file was taken from from [Conf-Thief](https://raw.githubusercontent.com/antman1p/Conf-Thief/master/dictionaries/secrets-keywords.txt).
 
 # Features
 
