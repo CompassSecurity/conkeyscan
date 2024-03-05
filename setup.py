@@ -16,6 +16,7 @@ setup(
         "readchar",
         "PySocks>=1",
     ],
+    entry_points={"console_scripts": ["conkeyscan = conkeyscan:entry_point"]},
     package_data={"texts": ["dict.txt"]},
     include_package_data=True,
 )
