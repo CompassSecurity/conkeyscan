@@ -3,6 +3,8 @@ from setuptools import setup
 setup(
     name="conkeyscan",
     version="{{VERSION_PLACEHOLDER}}",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
     py_modules=["conkeyscan"],
     install_requires=[
         "loguru",
