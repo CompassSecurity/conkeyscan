@@ -2,3 +2,5 @@ conkeyscan_results*
 venv
 dist
 results
+__pycache__/
+conkeyscan.egg-info/

@@ -1,10 +1,14 @@
-# 🙉🙉🙉 Conkeyscan 🙉🙉🙉
+# Conkeyscan
 
-Scan Confluence Wikis for keywords. Inspired by [Snaffler](https://github.com/SnaffCon/Snaffler).
+Scan Confluence Wikis for keywords.
 
 The approach is using the search functionality and CQL queries to search for keywords in Confluence.
 
-# Just Run It
+# PyPI
+
+Soon
+
+# Run It
 
 1. Download the latest release [here](https://github.com/CompassSecurity/conkeyscan/releases).
 
@@ -30,10 +34,14 @@ The approach is using the search functionality and CQL queries to search for key
 
 # Authentication
 
-It is possible to use a password or an API key.
+> It is possible to use a password or an API key.
 
 To create an API key in the cloud go to: https://id.atlassian.com/manage-profile/security/api-tokens
 If testing against OnPrem instance you can create an API key in the user settings.
+
+# Dictionary
+
+The default `dict.txt` file was taken from from [Conf-Thief](https://raw.githubusercontent.com/antman1p/Conf-Thief/master/dictionaries/secrets-keywords.txt)
 
 # Features
 
