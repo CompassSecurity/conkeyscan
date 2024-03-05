@@ -17,6 +17,5 @@ setup(
         "PySocks>=1",
     ],
     entry_points={"console_scripts": ["conkeyscan = conkeyscan:entry_point"]},
-    package_data={"": ["static/*"]},
     include_package_data=True,
 )
