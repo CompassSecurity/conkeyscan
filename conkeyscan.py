@@ -132,7 +132,7 @@ def main(
     url: "u",
     username: "usr",
     password: "pwd",
-    dict_path: "d" = "./dict.txt",
+    dict_path: "d" = os.path.join(os.path.dirname(__file__), "dict.txt"),
     disable_ssl_checks: "k" = True,
     rate_limit: "r" = 100,
     proxy: "p" = "",
@@ -247,5 +247,9 @@ def main(
                     )
 
 
-if __name__ == "__main__":
+def entry_point():
     run(main)
+
+
+if __name__ == "__main__":
+    entry_point()
