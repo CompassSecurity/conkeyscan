@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="conkeyscan",
@@ -17,5 +17,6 @@ setup(
         "PySocks>=1",
     ],
     entry_points={"console_scripts": ["conkeyscan = conkeyscan:entry_point"]},
+    packages=find_packages() + ["config"],
     include_package_data=True,
 )
