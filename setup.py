@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="conkeyscan",
     author="Jan Friedli",
+    url="https://github.com/CompassSecurity/conkeyscan",
     description="A Pentesters Confluence Keyword Scanner",
     version="{{VERSION_PLACEHOLDER}}",
     long_description=open("README.md").read(),
@@ -21,7 +22,7 @@ setup(
     entry_points={
         "console_scripts": ["conkeyscan = conkeyscan.conkeyscan:entry_point"]
     },
-    packages=find_packages(),
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
     include_package_data=True,
-    package_data={"conkeyscan.config": ["*.txt"]},
 )
