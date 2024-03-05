@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="conkeyscan",
-    version="0.1.0",
+    version="{{VERSION_PLACEHOLDER}}",
     py_modules=["conkeyscan"],
     install_requires=[
         "loguru",

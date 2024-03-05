@@ -4,3 +4,4 @@ dist
 results
 __pycache__/
 conkeyscan.egg-info/
+build
