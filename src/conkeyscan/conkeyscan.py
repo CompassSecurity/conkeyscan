@@ -7,7 +7,7 @@ import signal
 import readchar
 import json
 import os
-import pkg_resources
+from importlib.resources import files
 
 from clize import run
 from loguru import logger
@@ -133,7 +133,7 @@ def main(
     url: "u",
     username: "usr",
     password: "pwd",
-    dict_path: "d" = pkg_resources.resource_filename("conkeyscan", "config/dict.txt"),
+    dict_path: "d" = str(files("conkeyscan.config").joinpath("dict.txt")),
     disable_ssl_checks: "k" = True,
     rate_limit: "r" = 100,
     proxy: "p" = "",

@@ -25,11 +25,11 @@ The approach is using the search functionality and CQL queries to search for key
 
 2. Update the `dict.txt` file, containing keywords you want to search for. One per line.
 
-3. run it `python3 conkeyscan.py  --url http://192.168.1.2:8090/ --username someUsr --password somePassOrAPIkey`
+3. run it `python3 -m conkeyscan.conkeyscan --url http://192.168.1.2:8090/ --username someUsr --password somePassOrAPIkey`
 
 4. Profit 🍾 check the generated logfile or stdout
 
-5. Further Help `python3 conkeyscan.py -h`
+5. Further Help `python3 -m conkeyscan.conkeyscan -h`
 
 
 # Authentication
