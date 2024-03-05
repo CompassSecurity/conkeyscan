@@ -6,7 +6,7 @@ The approach is using the search functionality and CQL queries to search for key
 
 # PyPI
 
-Soon
+`pip install conkeyscan`
 
 # Run It
 

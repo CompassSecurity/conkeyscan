@@ -145,7 +145,7 @@ def main(
     :param url: URL of the Confluence instance
     :param username: The username of the account to be used
     :param password: The according password OR an API key!
-    :param dict_path: The path to the dictionary file containing the keywords to search for
+    :param dict_path: The path to the dictionary file containing the keywords to search for, falls back to included dict
     :param cql: A custom CQL query which must include KEYWORD_PLACEHOLDER at least once in the string which will be repalced by the keyword
     :param disable_ssl_checks: Specify whether to verify SSL/TLS certificates
     :param rate_limit: Max requests per second
