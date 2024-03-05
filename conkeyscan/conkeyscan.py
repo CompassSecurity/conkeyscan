@@ -133,7 +133,7 @@ def main(
     url: "u",
     username: "usr",
     password: "pwd",
-    dict_path: "d" = pkg_resources.resource_filename("conkeyscan", "static/dict.txt"),
+    dict_path: "d" = pkg_resources.resource_filename("conkeyscan", "config/dict.txt"),
     disable_ssl_checks: "k" = True,
     rate_limit: "r" = 100,
     proxy: "p" = "",
