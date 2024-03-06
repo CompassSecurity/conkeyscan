@@ -6,6 +6,7 @@ setup(
     url="https://github.com/CompassSecurity/conkeyscan",
     description="A Pentesters Confluence Keyword Scanner",
     version="{{VERSION_PLACEHOLDER}}",
+    license="mit",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     py_modules=["conkeyscan"],
