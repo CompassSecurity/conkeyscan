@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="150" src="./logo.png" alt="Material Bread logo">
+    <img width="150" src="https://github.com/CompassSecurity/conkeyscan/blob/main/logo.png" alt="Conkeyscan logo">
 </p>
 
 # Conkeyscan
