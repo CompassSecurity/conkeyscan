@@ -1,3 +1,7 @@
+<p align="center">
+    <img width="150" src="./logo.png" alt="Material Bread logo">
+</p>
+
 # Conkeyscan
 [![PyPI version](https://badge.fury.io/py/conkeyscan.svg)](https://badge.fury.io/py/conkeyscan)
 
