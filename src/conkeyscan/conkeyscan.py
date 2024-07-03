@@ -133,6 +133,7 @@ def main(
     url: "u",
     username: "usr",
     password: "pwd",
+    on_prem_pat: "t" = False,
     dict_path: "d" = str(files("conkeyscan.config").joinpath("dict.txt")),
     disable_ssl_checks: "k" = True,
     rate_limit: "r" = 100,
@@ -146,6 +147,7 @@ def main(
     :param url: URL of the Confluence instance
     :param username: The username of the account to be used
     :param password: The according password OR an API key!
+    :param on_prem_pat: Flag indicating whether to use PAT (Personal Access Token) for authentication instead of password [Data center / server editions only!]
     :param dict_path: The path to the dictionary file containing the keywords to search for, falls back to included dict
     :param cql: A custom CQL query which must include KEYWORD_PLACEHOLDER at least once in the string which will be replaced by the keyword
     :param disable_ssl_checks: Specify whether to verify SSL/TLS certificates
@@ -186,13 +188,23 @@ def main(
         "conkeyscan_results_" + datetime.now().strftime("%Y_%m_%d_%H_%M") + ".log"
     )
 
-    confluence_client = Confluence(
-        url=url,
-        username=username,
-        password=password,
-        verify_ssl=not disable_ssl_checks,
-        session=rate_limited_session,
-    )
+    confluence_client = None
+
+    if on_prem_pat:
+        confluence_client = Confluence(
+            url=url,
+            token=password,
+            verify_ssl=not disable_ssl_checks,
+            session=rate_limited_session,
+        )
+    else:
+        confluence_client = Confluence(
+            url=url,
+            username=username,
+            password=password,
+            verify_ssl=not disable_ssl_checks,
+            session=rate_limited_session,
+        )
 
     keywords = []
     try:
