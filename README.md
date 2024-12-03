@@ -33,7 +33,7 @@ conkeyscan -url 'https://example.atlassian.net'  --username 'ex@amp.le' --passwo
 
 To create an API key in the cloud go to: https://id.atlassian.com/manage-profile/security/api-tokens.
 
-If testing against OnPrem instance you can create an API key in the user settings.
+If testing against OnPrem instance you can create an API key in the user settings (and use conkeyscan with the parameter `-on-prem-pat` or `-t` for certain versions).
 
 # Dictionary
 
@@ -47,6 +47,7 @@ The default `dict.txt` file was taken from from [Conf-Thief](https://raw.githubu
 * Proxying is supported either via HTTP or socks. See cli help for examples
 * Custom CQL
 * SSL/TLS checks are disabled by default
+* Supports cloud- and datacenter/server editions
 
 # Alternatives 
 
